@@ -2,6 +2,7 @@ package lab01.example.model;
 
 public class SimpleBankAccountWithAtm implements BankAccount {
 
+    public static final int ATM_FEE = 1;
     private final AccountHolder accountHolder;
     private int balance;
 
@@ -26,6 +27,6 @@ public class SimpleBankAccountWithAtm implements BankAccount {
 
     @Override
     public void withdraw(int userID, double amount) {
-
+        this.balance -= (amount + ATM_FEE);
     }
 }
