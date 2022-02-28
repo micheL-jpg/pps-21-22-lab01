@@ -10,6 +10,10 @@ public class SimpleBankAccountWithAtm implements BankAccount {
         this.accountHolder = accountHolder;
     }
 
+    private boolean checkId(int id) {
+        return accountHolder.getId() == id;
+    }
+
     @Override
     public AccountHolder getHolder() {
         return accountHolder;
@@ -22,11 +26,15 @@ public class SimpleBankAccountWithAtm implements BankAccount {
 
     @Override
     public void deposit(int userID, double amount) {
-        this.balance += amount;
+        if (checkId(userID)) {
+            this.balance += amount;
+        }
     }
 
     @Override
     public void withdraw(int userID, double amount) {
-        this.balance -= (amount + ATM_FEE);
+        if (checkId(userID)){
+            this.balance -= (amount + ATM_FEE);
+        }
     }
 }
