@@ -3,6 +3,7 @@ package lab01.example.model;
 public class SimpleBankAccountWithAtm implements BankAccount {
 
     private final AccountHolder accountHolder;
+    private int balance;
 
     public SimpleBankAccountWithAtm(AccountHolder accountHolder) {
         this.accountHolder = accountHolder;
@@ -15,12 +16,12 @@ public class SimpleBankAccountWithAtm implements BankAccount {
 
     @Override
     public double getBalance() {
-        return 0;
+        return this.balance;
     }
 
     @Override
     public void deposit(int userID, double amount) {
-
+        this.balance += amount;
     }
 
     @Override
