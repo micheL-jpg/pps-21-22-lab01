@@ -20,4 +20,9 @@ public class SimpleBankAccountWithAtmTest {
     void testInitialBankAccount() {
         assertEquals(accountHolder.toString(), bankAccountWithAtm.getHolder().toString());
     }
+
+    @Test
+    void testInitialBalance() {
+        assertEquals(0, bankAccountWithAtm.getBalance());
+    }
 }
